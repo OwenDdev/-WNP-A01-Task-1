@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\SRC\\DataStructure\\Year2\\DataBase\\Library-Management-System\\WDFA01\\",
+  "WorkspaceRootPath": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{70F0F008-99F2-4976-B973-EA5DE5177BA5}|WDFA01\\WDFA01.csproj|c:\\src\\datastructure\\year2\\database\\library-management-system\\wdfa01\\wdfa01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F0F008-99F2-4976-B973-EA5DE5177BA5}|WDFA01\\WDFA01.csproj|e:\\src\\wnp\\-wnp-a01-task-1\\wdfa01\\wdfa01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F0F008-99F2-4976-B973-EA5DE5177BA5}|WDFA01\\WDFA01.csproj|solutionrelative:wdfa01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,9 +20,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\SRC\\DataStructure\\Year2\\DataBase\\Library-Management-System\\WDFA01\\WDFA01\\Program.cs",
+              "DocumentMoniker": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01\\Program.cs",
               "RelativeDocumentMoniker": "WDFA01\\Program.cs",
-              "ToolTip": "C:\\SRC\\DataStructure\\Year2\\DataBase\\Library-Management-System\\WDFA01\\WDFA01\\Program.cs",
+              "ToolTip": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01\\Program.cs",
               "RelativeToolTip": "WDFA01\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 class Program
 {
+    //object used to do the syncronization 
+    private static readonly object locker = new object();
     static void Main()
     {
         try
         {
             // Run multiple tasks that may throw exceptions
             Task task = Task.WhenAll(
-                Task.Run(() => MonnitorFileSIze(1000)),
-                Task.Run(() => Writetofile("log.txt", "Hello", 1)),
+                Task.Run(() => MonnitorFileSIze(1000, "C/log.txt")),
+                Task.Run(() => Writefile("log.txt", "Hello", 1)),
                 Task.Run(() => Setnumberofclients(200))
             );
 
@@ -28,15 +30,33 @@ class Program
         }
     }
 
-    // Example methods that throw exceptions
-    static void MonnitorFileSIze(int FileSize)
+    
+    static void MonnitorFileSIze(int filesize, string filepath)
     {
-        // code to monitor file size
+       
     }
 
-    static void Writetofile(string FileName, string message, int number)
+    static void Writefile(string filename, string message, int number)
     {
-        // code to monitor file size
+        // code to write to file
+         StreamWriter sw = null;
+
+        lock (locker)
+        {
+            try
+            {
+                using (sw = new StreamWriter(filename, true))
+                {
+                    sw.WriteLine(message);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+        }
     }
 
     static void Setnumberofclients(int number)
