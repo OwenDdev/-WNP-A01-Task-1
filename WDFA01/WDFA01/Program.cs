@@ -15,7 +15,7 @@ class Program
         {
             // Run multiple tasks that may throw exceptions
             Task task = Task.WhenAll(
-                Task.Run(() => MonnitorFileSIze(1000, "C/log.txt")),
+                Task.Run(() => MonnitorFileSize(1000, "C/log.txt")),
                 Task.Run(() => Writefile("log.txt", "Hello", 1)),
                 Task.Run(() => Setnumberofclients(200))
             );
@@ -31,9 +31,23 @@ class Program
     }
 
     
-    static void MonnitorFileSIze(int filesize, string filepath)
+    static async Task MonnitorFileSize(int filesize, string filepath)
     {
-       
+        for (int i = 0; i < 100; i++)
+        {
+            // long length = new System.IO.FileInfo(path).Length;
+            long lenght = new FileInfo(filepath).Length;
+            Console.WriteLine($"file size: {lenght}");
+
+            if (lenght >= filesize)
+            {
+                // how to stop async program 
+                break;
+            }
+
+            // 10 times check per second
+            await Task.Delay(100);
+        }
     }
 
     static void Writefile(string filename, string message, int number)
