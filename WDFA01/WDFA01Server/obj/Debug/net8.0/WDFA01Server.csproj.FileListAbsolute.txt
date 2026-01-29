@@ -1,0 +1,15 @@
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\WDFA01Server.exe
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\WDFA01Server.deps.json
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\WDFA01Server.runtimeconfig.json
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\WDFA01Server.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\WDFA01Server.pdb
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.GeneratedMSBuildEditorConfig.editorconfig
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.AssemblyInfoInputs.cache
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.AssemblyInfo.cs
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.csproj.CoreCompileInputs.cache
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.sourcelink.json
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\refint\WDFA01Server.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.pdb
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.genruntimeconfig.cache
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\ref\WDFA01Server.dll
