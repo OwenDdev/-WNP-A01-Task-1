@@ -13,14 +13,19 @@ using System.Net.Sockets;
 using System.Text;
 using System.ComponentModel.Design;
 using System.Net;
+using System.Configuration;
 
 class Program
 {
     public static async Task Main()
     {
         bool done = false;
+        Int32 port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+        string localAddr = (ConfigurationManager.AppSettings["IP"]);
+
+
         using TcpClient client = new TcpClient();
-        await client.ConnectAsync(IPAddress.Parse("10.144.99.100"), 5000);
+        await client.ConnectAsync(IPAddress.Parse(localAddr), port);
 
         // Create a NetworkStream
         using NetworkStream stream = client.GetStream();

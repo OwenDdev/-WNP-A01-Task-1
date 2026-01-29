@@ -23,9 +23,11 @@ namespace WDFA01Server
         public static async Task Main()
         {
 
-         
+            Int32 port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+            string localAddr = (ConfigurationManager.AppSettings["IP"]);
+
             // Create the TcpListener and start it
-            TcpListener listener = new TcpListener(IPAddress.Parse("10.144.99.100"), 5000);
+            TcpListener listener = new TcpListener(IPAddress.Parse(localAddr), port);
             listener.Start();
             Console.WriteLine("Server started on port 5000");
 
@@ -72,8 +74,8 @@ namespace WDFA01Server
                 Console.WriteLine($"Received: {Fullmessage}");
 
 
-
-                string filepath = @"E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\text.txt";
+                string filepath = (ConfigurationManager.AppSettings["File"]);
+                //string filepath = @"E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\text.txt";
 
                 // Run multiple tasks that may throw exceptions
                 Task task = Task.WhenAll(

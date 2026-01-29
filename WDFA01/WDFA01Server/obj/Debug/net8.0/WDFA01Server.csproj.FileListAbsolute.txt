@@ -13,3 +13,11 @@ E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\refint\WDFA01Ser
 E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.pdb
 E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.genruntimeconfig.cache
 E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\ref\WDFA01Server.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\WDFA01Server.dll.config
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Server.csproj.AssemblyReference.cache
+E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\WDFA01Server\obj\Debug\net8.0\WDFA01Se.7F7AEFC8.Up2Date

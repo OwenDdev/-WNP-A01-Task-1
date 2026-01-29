@@ -11,6 +11,14 @@
       "RelativeMoniker": "D:0:0:{520F4CF4-B2F0-412B-A7D5-916BADC5B09F}|WDFA01Server\\WDFA01Server.csproj|solutionrelative:wdfa01server\\wdfa01server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{70F0F008-99F2-4976-B973-EA5DE5177BA5}|WDFA01\\WDFA01.csproj|e:\\src\\wnp\\-wnp-a01-task-1\\wdfa01\\wdfa01\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{70F0F008-99F2-4976-B973-EA5DE5177BA5}|WDFA01\\WDFA01.csproj|solutionrelative:wdfa01\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{520F4CF4-B2F0-412B-A7D5-916BADC5B09F}|WDFA01Server\\WDFA01Server.csproj|e:\\src\\wnp\\-wnp-a01-task-1\\wdfa01\\wdfa01server\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{520F4CF4-B2F0-412B-A7D5-916BADC5B09F}|WDFA01Server\\WDFA01Server.csproj|solutionrelative:wdfa01server\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70F0F008-99F2-4976-B973-EA5DE5177BA5}|WDFA01\\WDFA01.csproj|e:\\src\\wnp\\-wnp-a01-task-1\\wdfa01\\wdfa01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F0F008-99F2-4976-B973-EA5DE5177BA5}|WDFA01\\WDFA01.csproj|solutionrelative:wdfa01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,12 +30,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\App.config",
+              "RelativeDocumentMoniker": "WDFA01Server\\App.config",
+              "ToolTip": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\App.config",
+              "RelativeToolTip": "WDFA01Server\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-01-29T17:34:56.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01\\App.config",
+              "RelativeDocumentMoniker": "WDFA01\\App.config",
+              "ToolTip": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01\\App.config",
+              "RelativeToolTip": "WDFA01\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-01-29T17:32:19.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "WDFA01Server",
+              "Title": "WDFA01Server.csproj",
               "DocumentMoniker": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\WDFA01Server.csproj",
               "RelativeDocumentMoniker": "WDFA01Server\\WDFA01Server.csproj",
               "ToolTip": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\WDFA01Server.csproj",
@@ -45,20 +79,20 @@
               "RelativeDocumentMoniker": "WDFA01Server\\Program.cs",
               "ToolTip": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\Program.cs",
               "RelativeToolTip": "WDFA01Server\\Program.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFUAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwE0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:15:49.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01\\Program.cs",
               "RelativeDocumentMoniker": "WDFA01\\Program.cs",
               "ToolTip": "E:\\SRC\\WNP\\-WNP-A01-Task-1\\WDFA01\\WDFA01\\Program.cs",
               "RelativeToolTip": "WDFA01\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAgwCgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T14:47:34.553Z",
               "EditorCaption": ""
