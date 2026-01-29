@@ -17,8 +17,22 @@ using System.Configuration;
 
 class Program
 {
-    public static async Task Main()
+    public static async Task Main(string[] args)
     {
+
+
+        if (args.Length != 3 || args[0] == "/?")
+        {
+            usageMessage();
+            return;
+        }
+
+        string ClientNo = args[0];
+        string filesize = args[1];
+
+
+        string ClientMessage = ClientNo + "|" + filesize + "|" + Menu();
+
         bool done = false;
         Int32 port = int.Parse(ConfigurationManager.AppSettings["Port"]);
         string localAddr = (ConfigurationManager.AppSettings["IP"]);
@@ -34,7 +48,7 @@ class Program
         {
             // Convert the output stream to a byte array so TCP/IP
             //   can use it
-            string message = Menu();
+            string message = ClientMessage;
             byte[] data = Encoding.UTF8.GetBytes(message);
 
             await stream.WriteAsync(data, 0, data.Length);
@@ -62,20 +76,49 @@ class Program
 
     public static string Menu()
     {
-        string clientNo;
-        string FileSize;
+        //string clientNo;
+        //string FileSize;
         string Message;
-        string ClientMessage;
+        //string ClientMessage;
         
-        Console.WriteLine("Input Number of clients:");
-        clientNo = Console.ReadLine();
-        Console.WriteLine("Input FileSize:");
-        FileSize = Console.ReadLine();
+        //Console.WriteLine("Input Number of clients:");
+        //clientNo = Console.ReadLine();
+        //Console.WriteLine("Input FileSize:");
+        //FileSize = Console.ReadLine();
         Console.WriteLine("Input message");
         Message = Console.ReadLine();
 
-        ClientMessage = clientNo + "|" + FileSize + "|" + Message;
-        return ClientMessage;
+        //ClientMessage = clientNo + "|" + FileSize + "|" + Message;
+        //return ClientMessage;
+        return Message;
+    }
 
+    //
+    // FUNCTION : usageMessage
+    // DESCRIPTION :
+    // This function displays a usage message to the user if assignment defined conditions 
+    // PARAMETERS :
+    //
+    // RETURNS :
+    //
+    static void usageMessage()
+    {
+        Console.WriteLine("___Usage Message_____");
+        Console.WriteLine("WriteFileMonitor <filename> <filesize> ");
+
+        Console.WriteLine();
+        Console.WriteLine("Argument 1  <No of CLients>     : Name of the file, Must not be Blank.");
+        Console.WriteLine("Argument 2  <filesize>     : Max file size(in bytes) (100,000 - 20,000,000), Must not be Blank, Must be an Integer.");
+        //Console.WriteLine("Argument 3  <threadnum>    : Number of threads to use (1 - 5), Must Not be Blank.");
+        Console.WriteLine();
+
+        Console.WriteLine("TcpFileMonitor");
+        Console.WriteLine("Modified by Orewen Precious, Najef, Che ping, yi chen");
+        Console.WriteLine("Assignment 01 solutionn");
+        Console.WriteLine();
+
+        Console.WriteLine("Create Folder nmtemp in C drive if doesnt already exist");
+        Console.WriteLine("Port and IP Address Set in Config File");
+        Console.WriteLine("Use '/?' to display usage message.");
     }
 }

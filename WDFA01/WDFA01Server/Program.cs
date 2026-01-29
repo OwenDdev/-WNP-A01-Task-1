@@ -23,6 +23,7 @@ namespace WDFA01Server
         public static async Task Main()
         {
 
+
             Int32 port = int.Parse(ConfigurationManager.AppSettings["Port"]);
             string localAddr = (ConfigurationManager.AppSettings["IP"]);
 
