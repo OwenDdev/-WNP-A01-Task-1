@@ -14,6 +14,7 @@ using System.Text;
 using System.ComponentModel.Design;
 using System.Net;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 class Program
 {
@@ -29,9 +30,37 @@ class Program
 
         string ClientNo = args[0];
         string filesize = args[1];
+        string Message = args[2];
 
+        string namePattern = @"^[\w\-. ]+$";
 
-        string ClientMessage = ClientNo + "|" + filesize + "|" + Menu();
+        // Validate message
+        if (string.IsNullOrWhiteSpace(Message))
+        {
+            usageMessage();
+            return;
+        }
+        else if (!Regex.IsMatch(Message, namePattern))
+        {
+            usageMessage();
+            return;
+        }
+
+        // Validate size
+        if (!int.TryParse(filesize, out int fileSize) || fileSize < 1 || fileSize > 10000000)
+        {
+            usageMessage();
+            return;
+        }
+
+        // Validate ClientN0
+        if (!int.TryParse(ClientNo, out int threadNum) || threadNum < 1 || threadNum > 10000)
+        {
+            usageMessage();
+            return;
+        }
+
+        string ClientMessage = ClientNo + "|" + filesize + "|" + Message;
 
         bool done = false;
         Int32 port = int.Parse(ConfigurationManager.AppSettings["Port"]);
@@ -44,8 +73,8 @@ class Program
         // Create a NetworkStream
         using NetworkStream stream = client.GetStream();
 
-        while (!done)
-        {
+        //while (!done)
+        //{
             // Convert the output stream to a byte array so TCP/IP
             //   can use it
             string message = ClientMessage;
@@ -69,7 +98,7 @@ class Program
                 done = true;
             }
             
-        }
+        //}
         Console.WriteLine("Program ended...press any key.");
         Console.ReadKey();
     }

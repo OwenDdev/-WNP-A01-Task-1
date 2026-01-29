@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WDFA01": {
+      "commandName": "Project",
+      "commandLineArgs": "100 10000 hi"
+    }
+  }
+}

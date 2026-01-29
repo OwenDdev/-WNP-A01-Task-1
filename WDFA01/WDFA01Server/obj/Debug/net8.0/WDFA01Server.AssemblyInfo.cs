@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WDFA01Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afeba7eaf4cf82237d49cde47a8c2f9ef7ebb028")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22c52c9da37ba7158dd385f53ca74eca31506992")]
 [assembly: System.Reflection.AssemblyProductAttribute("WDFA01Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WDFA01Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
