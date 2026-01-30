@@ -30,7 +30,7 @@ namespace WDFA01Server
             // Create the TcpListener and start it
             TcpListener listener = new TcpListener(IPAddress.Parse(localAddr), port);
             listener.Start();
-            Console.WriteLine("Server started on port 5000");
+            Console.WriteLine("Server started on port");
 
             // Main loop to handle client requests.
             // The server accepts a client request, then passes control
@@ -49,62 +49,105 @@ namespace WDFA01Server
             bool done = false;
             Console.WriteLine("Client connected");
 
-            // The using statement should be used to make communications
-            //   easier.
-            using NetworkStream stream = client.GetStream();
-
-            while (!done)
+            try
             {
-                // Need a buffer for the input
-                byte[] buffer = new byte[1024];
+                // The using statement should be used to make communications
+                //   easier.
+                using NetworkStream stream = client.GetStream();
 
-                int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
-
-                // Remember, the data over TCP/IP is in bytes, so the stream
-                //    must be converted to a string so you can use it.
-                string Fullmessage = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-
-                string[] MessageParts = Fullmessage.Split("|");
-
-                int ClientNo;
-                Int32.TryParse(MessageParts[0], out ClientNo);
-                int FileSize;
-                Int32.TryParse(MessageParts[1], out FileSize);
-                string Message = MessageParts[2];
-
-                Console.WriteLine($"Received: {Fullmessage}");
-
-
-                string filepath = (ConfigurationManager.AppSettings["File"]);
-                //string filepath = @"E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\text.txt";
-
-                // Run multiple tasks that may throw exceptions
-                Task task = Task.WhenAll(
-                    Task.Run(() => MonnitorFileSize(FileSize, filepath)),
-                    //Task.Run(() => Writefile(filepath, message)),
-                    Task.Run(() => Setnumberofclients(filepath, Message, ClientNo))
-                );
-
-                // Wait for all tasks to complete 
-                //task.Wait();
-
-
-
-                // The data must be converted to a byte array to be used
-                //    by TCP/IP
-                string response = "Message received!";
-                byte[] responseBytes = Encoding.UTF8.GetBytes(response);
-
-                await stream.WriteAsync(responseBytes, 0, responseBytes.Length);
-                Console.WriteLine("Response sent");
-
-                if (Fullmessage == "Shutdown")
+                while (!done)
                 {
-                    done = true;
-                    client.Close();
+                    // Need a buffer for the input
+                    byte[] buffer = new byte[1024];
+
+                    int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+
+                    if (bytesRead == 0)
+                    {
+                        Console.WriteLine("Client disconnected");
+                        break;
+                    }
+
+                    // Remember, the data over TCP/IP is in bytes, so the stream
+                    //    must be converted to a string so you can use it.
+                    string Fullmessage = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+
+                    Console.WriteLine($"Received: {Fullmessage}");
+
+                    // When user type shutdown command
+                    if (Fullmessage.Equals("Shutdown", StringComparison.OrdinalIgnoreCase))
+                    {
+                        string shutdown = "Shutdown command, connection will be closed";
+                        byte[] shutdownBytes = Encoding.UTF8.GetBytes(shutdown);
+                        await stream.WriteAsync(shutdownBytes, 0, shutdownBytes.Length);
+                        client.Close();
+                        break;
+                    }
+
+                    string[] MessageParts = Fullmessage.Split("|");
+
+                    if (MessageParts.Length != 3)
+                    {
+                        string badRequest = "Invalid input. Please check the usage";
+                        byte[] badRequestBytes = Encoding.UTF8.GetBytes(badRequest);
+                        await stream.WriteAsync(badRequestBytes, 0, badRequestBytes.Length);
+                        continue;
+                    }
+
+                    bool parseClientNo = int.TryParse(MessageParts[0], out int ClientNo);
+                    bool parseFileSize = int.TryParse(MessageParts[1], out int FileSize);
+                    string Message = MessageParts[2];
+
+                    if(!parseClientNo || !FileSize || ClientNo < 1 || FileSize < 1)
+                    {
+                        string badInt = "Invalid input. Client and File size must be positive integers";
+                        byte[] badIntBytes = Encoding.UTF8.GetBytes(badInt);
+                        await stream.WriteAsync(badIntBytes, 0, badIntBytes.Length);
+                        continue;
+                    }
+
+
+                    string filepath = (ConfigurationManager.AppSettings["File"]);
+                    //string filepath = @"E:\SRC\WNP\-WNP-A01-Task-1\WDFA01\text.txt";
+
+                    //EnsureFileExists(filepath);
+
+                    // Run multiple tasks that may throw exceptions
+                    await Task.WhenAll(
+                        MonnitorFileSize(FileSize, filepath)),
+                        //Task.Run(() => Writefile(filepath, message)),
+                        Setnumberofclients(filepath, Message, ClientNo))
+                    );
+
+                    // Wait for all tasks to complete 
+                    //task.Wait();
+
+
+
+                    // The data must be converted to a byte array to be used
+                    //    by TCP/IP
+                    string response = "Message received!";
+                    byte[] responseBytes = Encoding.UTF8.GetBytes(response);
+
+                    await stream.WriteAsync(responseBytes, 0, responseBytes.Length);
+                    Console.WriteLine("Response sent");
+
+                    if (Fullmessage == "Shutdown")
+                    {
+                        done = true;
+                        client.Close();
+                    }
                 }
             }
-           
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
+            // Always close socket after handle the request from client
+            finally
+            {
+                client.Close();
+            }
         }
 
         static async Task MonnitorFileSize(int filesize, string filepath)

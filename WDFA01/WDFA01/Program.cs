@@ -20,9 +20,13 @@ class Program
 {
     public static async Task Main(string[] args)
     {
+        if(args.Length == 1 && args[0] == "/?")
+        {
+            usageMessage();
+            return;
+        }
 
-
-        if (args.Length != 3 || args[0] == "/?")
+        if (args.Length != 3)
         {
             usageMessage();
             return;
@@ -32,7 +36,7 @@ class Program
         string filesize = args[1];
         string Message = args[2];
 
-        string namePattern = @"^[\w\-. ]+$";
+        string namePattern = @"^[\w\-. ]+$!,:";
 
         // Validate message
         if (string.IsNullOrWhiteSpace(Message))
@@ -40,7 +44,14 @@ class Program
             usageMessage();
             return;
         }
-        else if (!Regex.IsMatch(Message, namePattern))
+
+        if (Message.Contains("|"))
+        {
+            usageMessage();
+            return;
+        }
+
+        if (!Regex.IsMatch(Message, namePattern))
         {
             usageMessage();
             return;
@@ -53,14 +64,25 @@ class Program
             return;
         }
 
-        // Validate ClientN0
+        // Validate ClientNo
         if (!int.TryParse(ClientNo, out int threadNum) || threadNum < 1 || threadNum > 10000)
         {
             usageMessage();
             return;
         }
 
-        string ClientMessage = ClientNo + "|" + filesize + "|" + Message;
+        //string ClientMessage = ClientNo + "|" + filesize + "|" + Message;
+
+        // Create a string for Shutdown command
+        string ClientMessage;
+        if(Message.Equals("Shutdown", StringComparison.OrdinalIgnoreCase))
+        {
+            ClientMessage = "Shutdown";
+        }
+        else
+        {
+            ClientMessage = $"{ClientNo}|{filesize}|{Message}";
+        }
 
         bool done = false;
         Int32 port = int.Parse(ConfigurationManager.AppSettings["Port"]);
@@ -93,10 +115,12 @@ class Program
             string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
             Console.WriteLine($"Server replied: {response}");
 
+            /*
             if (message == "Shutdown")
             {
                 done = true;
             }
+            */
             
         //}
         Console.WriteLine("Program ended...press any key.");
@@ -133,11 +157,11 @@ class Program
     static void usageMessage()
     {
         Console.WriteLine("___Usage Message_____");
-        Console.WriteLine("WriteFileMonitor <filename> <filesize> ");
+        Console.WriteLine("WriteFileMonitor <filesize> <message> ");
 
         Console.WriteLine();
         Console.WriteLine("Argument 1  <No of CLients>     : Name of the file, Must not be Blank.");
-        Console.WriteLine("Argument 2  <filesize>     : Max file size(in bytes) (100,000 - 20,000,000), Must not be Blank, Must be an Integer.");
+        Console.WriteLine("Argument 2  <filesize>     : Max file size(in bytes) (1 - 10,000,000), Must not be Blank, Must be an Integer.");
         //Console.WriteLine("Argument 3  <threadnum>    : Number of threads to use (1 - 5), Must Not be Blank.");
         Console.WriteLine();
 
