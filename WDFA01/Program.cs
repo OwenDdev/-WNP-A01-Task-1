@@ -134,14 +134,14 @@ namespace WDFA01Client
                     client.ReceiveTimeout = 5000;
 
                     await client.ConnectAsync(IPAddress.Parse(serverAddr), port);
-                    Console.WriteLine("✓ Connected to server successfully.");
+                    Console.WriteLine("Connected to server successfully.");
 
                     using (NetworkStream stream = client.GetStream())
                     {
                         // Send message to server
                         byte[] data = Encoding.UTF8.GetBytes(clientMessage);
                         await stream.WriteAsync(data, 0, data.Length);
-                        Console.WriteLine($"✓ Message sent to server.");
+                        Console.WriteLine($"Message sent to server.");
 
                         // Receive server response
                         byte[] buffer = new byte[1024];

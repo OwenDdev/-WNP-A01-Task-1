@@ -248,31 +248,47 @@ namespace WDFA01Server
                 int clientId = i + 1;
                 writeTasks[i] = Task.Run(() =>
                 {
-                    // Thread-safe file writing
-                    lock (fileLock)
+                    // While Loop added to ensure File Size reached (This is a requirement)
+                    while (true )
                     {
-                        if (!stopWriting)
+                        // Thread-safe file writing
+                        lock (fileLock)
                         {
-                            try
+                            if (!stopWriting)
                             {
-                                using (StreamWriter sw = new StreamWriter(filepath, true))
+                                long currentSize = new FileInfo(filepath).Length;
+
+                                // Stop EXACTLY at target
+                                if (currentSize >= fileSizeLimit)
+                                    return;
+
+                                try
                                 {
-                                    string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                                    sw.WriteLine($"{timestamp} - [Client {clientId}] {message}");
+                                    using (StreamWriter sw = new StreamWriter(filepath, true))
+                                    {
+                                        // stuff like date time should probably be kept in  log file so im commenting it out 
+                                        //string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                                        //sw.WriteLine($"{timestamp} - [Client {clientId}] {message}");
+                                        sw.WriteLine($"[Client {clientId}] {message}");
+                                        //sw.WriteLine($"{message}");
+                                    }
                                 }
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine($"Error writing to file: {ex.Message}");
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine($"Error writing to file: {ex.Message}");
+                                }
                             }
                         }
                     }
+                    
                 });
             }
 
+            // Code Should not wait for all write to be complete cause what if file size is reached before  all clinets finish writing 
             // Wait for all write operations to complete
-            await Task.WhenAll(writeTasks);
-            Console.WriteLine($"Completed writing {numberOfClients} messages to file.");
+            //await Task.WhenAll(writeTasks);
+            //Console.WriteLine($"Completed writing {numberOfClients} messages to file.");
+            Console.WriteLine($"Completed writing messages to file.");
         }
 
         /*
