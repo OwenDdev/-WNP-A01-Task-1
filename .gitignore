@@ -1,10 +1,12 @@
 # Visual Studio
 .vs/
+**/.vs/
 *.suo
 
-# Build output
-bin/
-obj/
+# Build outputs
+**/bin/
+**/obj/
+
 
 # User-specific
 *.user
