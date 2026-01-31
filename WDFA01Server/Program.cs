@@ -18,6 +18,9 @@
 *      - Graceful shutdown capability
 */
 
+// Refrences: dotnet-bot. (2026). Stopwatch Class (System.Diagnostics). Microsoft.com. https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=net-10.0
+//              (2026). Desire2learn.com. https://conestoga.desire2learn.com/d2l/le/content/1521928/Home
+
 using System.Configuration;
 using System.Diagnostics;
 using System.Net;
