@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LRBWZskgZdU=",
+  "dgSpecHash": "St1nmsg2NWw=",
   "success": true,
-  "projectFilePath": "C:\\SRC\\-WNP-A01-Task-1\\WDFA01\\WDFA01\\WDFA01.csproj",
+  "projectFilePath": "C:\\WNP\\A01\\WDFA01\\WDFA01\\WDFA01.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chepi\\.nuget\\packages\\system.configuration.configurationmanager\\10.0.2\\system.configuration.configurationmanager.10.0.2.nupkg.sha512",
-    "C:\\Users\\chepi\\.nuget\\packages\\system.diagnostics.eventlog\\10.0.2\\system.diagnostics.eventlog.10.0.2.nupkg.sha512",
-    "C:\\Users\\chepi\\.nuget\\packages\\system.security.cryptography.protecteddata\\10.0.2\\system.security.cryptography.protecteddata.10.0.2.nupkg.sha512"
+    "C:\\Users\\chann\\.nuget\\packages\\system.configuration.configurationmanager\\10.0.2\\system.configuration.configurationmanager.10.0.2.nupkg.sha512",
+    "C:\\Users\\chann\\.nuget\\packages\\system.diagnostics.eventlog\\10.0.2\\system.diagnostics.eventlog.10.0.2.nupkg.sha512",
+    "C:\\Users\\chann\\.nuget\\packages\\system.security.cryptography.protecteddata\\10.0.2\\system.security.cryptography.protecteddata.10.0.2.nupkg.sha512"
   ],
   "logs": []
 }

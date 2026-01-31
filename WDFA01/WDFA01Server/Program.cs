@@ -30,7 +30,7 @@ namespace WDFA01Server
             // Create the TcpListener and start it
             TcpListener listener = new TcpListener(IPAddress.Parse(localAddr), port);
             listener.Start();
-            Console.WriteLine("Server started on port");
+            Console.WriteLine($"Server started on port {port}");
 
             // Main loop to handle client requests.
             // The server accepts a client request, then passes control
