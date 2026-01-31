@@ -176,23 +176,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chann\\.nuget\\packages\\": {},
+    "C:\\Users\\chepi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\WNP\\A01\\WDFA01\\WDFA01Server\\WDFA01Server.csproj",
+      "projectUniqueName": "C:\\SRC\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\WDFA01Server.csproj",
       "projectName": "WDFA01Server",
-      "projectPath": "C:\\WNP\\A01\\WDFA01\\WDFA01Server\\WDFA01Server.csproj",
-      "packagesPath": "C:\\Users\\chann\\.nuget\\packages\\",
-      "outputPath": "C:\\WNP\\A01\\WDFA01\\WDFA01Server\\obj\\",
+      "projectPath": "C:\\SRC\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\WDFA01Server.csproj",
+      "packagesPath": "C:\\Users\\chepi\\.nuget\\packages\\",
+      "outputPath": "C:\\SRC\\-WNP-A01-Task-1\\WDFA01\\WDFA01Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\chann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chepi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -219,7 +219,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -246,7 +246,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

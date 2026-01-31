@@ -98,7 +98,7 @@ namespace WDFA01Server
                     bool parseFileSize = int.TryParse(MessageParts[1], out int FileSize);
                     string Message = MessageParts[2];
 
-                    if(!parseClientNo || !FileSize || ClientNo < 1 || FileSize < 1)
+                    if (!parseClientNo || !parseFileSize || ClientNo < 1 || FileSize < 1)
                     {
                         string badInt = "Invalid input. Client and File size must be positive integers";
                         byte[] badIntBytes = Encoding.UTF8.GetBytes(badInt);
@@ -114,9 +114,9 @@ namespace WDFA01Server
 
                     // Run multiple tasks that may throw exceptions
                     await Task.WhenAll(
-                        MonnitorFileSize(FileSize, filepath)),
+                        MonnitorFileSize(FileSize, filepath),
                         //Task.Run(() => Writefile(filepath, message)),
-                        Setnumberofclients(filepath, Message, ClientNo))
+                        Setnumberofclients(filepath, Message, ClientNo)
                     );
 
                     // Wait for all tasks to complete 

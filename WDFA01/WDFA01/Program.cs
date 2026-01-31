@@ -51,11 +51,12 @@ class Program
             return;
         }
 
-        if (!Regex.IsMatch(Message, namePattern))
-        {
-            usageMessage();
-            return;
-        }
+        
+        //if (Regex.IsMatch(Message, namePattern))
+        //{
+        //    usageMessage();
+        //    return;
+        //}
 
         // Validate size
         if (!int.TryParse(filesize, out int fileSize) || fileSize < 1 || fileSize > 10000000)
@@ -87,11 +88,13 @@ class Program
         bool done = false;
         Int32 port = int.Parse(ConfigurationManager.AppSettings["Port"]);
         string localAddr = (ConfigurationManager.AppSettings["IP"]);
-
+        Stopwatch timer = new Stopwatch();
 
         using TcpClient client = new TcpClient();
         await client.ConnectAsync(IPAddress.Parse(localAddr), port);
 
+        //Timer start
+        timer.Start();
         // Create a NetworkStream
         using NetworkStream stream = client.GetStream();
 
@@ -115,14 +118,19 @@ class Program
             string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
             Console.WriteLine($"Server replied: {response}");
 
-            /*
-            if (message == "Shutdown")
-            {
-                done = true;
-            }
-            */
-            
+        /*
+        if (message == "Shutdown")
+        {
+            done = true; 
+        }
+        */
+
         //}
+        //timer end 
+        timer.Stop();
+        //get process time 
+        double totalSeconds = timer.Elapsed.TotalSeconds;
+        Console.WriteLine($"Total Time:{totalSeconds:F3} seconds");
         Console.WriteLine("Program ended...press any key.");
         Console.ReadKey();
     }
